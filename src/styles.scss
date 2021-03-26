@@ -1,1 +1,95 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+@import './sass/base';
+
+
+
+html,
+body {
+    height: 100%;
+    overflow-x: hidden;
+}
+body {
+    margin: 0;
+    font-family: "Noto Sans", sans-serif;
+    background-color: $bodybackground;
+}
+h2 {
+    font-size: 40px;
+}
+
+
+.title {
+    color: $title;
+    position: relative;
+    padding-left: 20px;
+
+}
+.title::before {
+    position: absolute;
+    width: 60px;
+    height: 10px;
+    content: "";
+    background-color: #00a9e148;
+    border-bottom-left-radius:90%;
+    border-bottom-right-radius:70%;
+    left: 20px;
+    bottom: -5px;
+}
+
+// Input parametros de animação
+.form-field-class {
+    position: relative;
+
+    .input-class {
+        width: 100%;
+        border: none;
+        outline: none;
+    }
+    .underline {
+        transition: all 0.5s;
+        display: inline-block;
+        bottom: 0;
+        opacity: 0;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #00a8e1
+    }
+}
+
+@keyframes underlineAnimate {
+    from {
+        opacity: 0;
+        left: -50%;
+    }
+    to {
+        opacity: 1;
+        left: 0;
+    }
+}
+
+.input-class:focus + .underline {
+    animation: underlineAnimate 0.3s forwards;
+}
+@keyframes animeLeft {
+    from {
+        opacity: 0;
+        transform: translate(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(50px);
+    }
+}
+
+@keyframes animeRight {
+    from {
+        opacity: 0;
+        transform: translate(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0px);
+    }
+}

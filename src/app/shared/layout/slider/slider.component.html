@@ -1,0 +1,18 @@
+<div class='container'>
+    <h2>Lançamentos</h2>
+<section class='slider'>
+    <div class='slider_itens'>
+        <ul class='container_hover'>
+            <li class='item_slide' *ngFor="let item of arrayFilmes" (mouseover)='showInfo($event)' (mouseout)='hideInfo($event)'>
+                <img src='{{item.image}}' />
+                <span >
+                    <h2>{{item.title}}</h2>
+                    <p>{{item.description}}</p>
+                    <button  routerLink='video/{{item.id}}'>  <mat-icon>play_arrow</mat-icon> Assistir</button>
+                </span>
+            </li>
+        </ul>
+    </div>
+
+</section>
+</div>

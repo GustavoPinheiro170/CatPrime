@@ -1,0 +1,123 @@
+@import '../../../../sass/base';
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    h2{
+    margin-left: 15%;
+    color: white;
+    }   
+}
+.slider {
+    margin: 0px 120px;
+    color: white;
+    max-width: 100%;
+    max-height: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    &::-webkit-scrollbar {
+        display: none;
+      }
+    .informations{
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        transition: .5s;
+        background-color: rgba(5, 5, 5, 0.281);
+        animation: 1s opacityDown forwards;
+        h2, p {
+            margin: 30px;
+            z-index: -1;
+        }
+        button {
+            display: flex;
+            align-items: center;
+            background-color: $title;
+            color: white;
+            margin-left: 30px;
+            border: none;
+            border-radius: 10px;
+            padding: 10px;
+            width: 100px;
+            cursor: pointer;
+        }
+    }
+    .slider_itens {
+        position: relative;
+        display: flex;
+        gap: 20px;
+        &:hover span  {
+            opacity: 1;
+        }
+        .container_hover {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            top: 0;
+            bottom: 0;
+            z-index: 99;
+            list-style-type: none;
+        }
+        .item_slide {
+            position: relative;
+            margin-left: 30px;
+            width: 300px;
+            height: 400px;
+            img {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: .5s;
+                &:hover {
+                    width: 350px;
+                    height: 450px;
+                    
+                }
+    
+            }
+        }
+    }
+}
+
+@media(max-width:800px) {
+    .slider {
+        margin: 80px 0px;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        margin-top: 100px;
+        h2{
+        margin-left: 15%;
+        color: white;
+        margin-bottom: -10%;
+        }   
+    }
+    .container_hover {
+    margin-left: -50px;
+    height: 385px;
+    }
+}
+@keyframes opacityDown {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes animeDown {
+    from {
+        margin-top: 20px;
+    }
+    to {
+        margin-top: 0;
+    }
+}
+

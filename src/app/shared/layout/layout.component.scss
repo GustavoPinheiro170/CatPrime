@@ -1,0 +1,158 @@
+@import "../../../sass/base";
+
+.container_initial {
+    display: flex;
+    position: relative;
+    animation: animeDown 1s forwards;
+    .description {
+        width: 60%;
+        height: 420px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        p {
+            color: white;
+            margin: 20px 30px 0px 0px;
+        }
+
+        h2 {
+            color: white;
+            font-size: 70px;
+            margin: 50px 50px;
+            width: 450px;
+            line-height: 100px;
+        }
+        .subtitle {
+            display: block;
+            color: white;
+            text-align: left;
+            margin-left: 15%;
+            font-size: 25px;
+        }
+        .buttons-preview {
+            display: flex;
+            justify-content: left;
+            align-items: flex-start;
+            margin-top: 20px;
+            margin-left: 15%;
+            gap: 30px;
+            .playnow {
+                display: flex;
+                background-color: $title;
+                color: white;
+                border-radius: 10px;
+                padding: 10px;
+                justify-content: center;
+                align-items: center;
+                transition: 0.3s;
+                font-size: 18px;
+                border: none;
+                cursor: pointer;
+                &:hover {
+                    background-color: rgb(88, 88, 88);
+                    color: white;
+                }
+            }
+            .favorite {
+                cursor: pointer;
+                display: flex;
+                background-color: $backgroundfavorite;
+                color: white;
+                border-radius: 10px;
+                padding: 10px;
+                justify-content: center;
+                align-items: center;
+                border: none;
+            }
+            mat-icon {
+                padding: 5px;
+            }
+        }
+    }
+    .image_initial {
+        position: absolute;
+        top: -80px;
+        width: 100%;
+        height: 600px;
+        object-fit: cover;
+        z-index: -99;
+        background-image: linear-gradient(to right, rgb(8, 8, 8), rgba(97, 97, 97, 0)),
+            url("../../../assets/catvsgodzilla.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        animation: opacityDown 4s forwards;
+    }
+}
+.bg-gradient {
+    display: block;
+    position: absolute;
+    bottom: -100px;
+    width: 100%;
+    height: 300px;
+    background: rgb(97, 97, 97);
+    background: linear-gradient(0deg, $bodybackground 0%, rgb(31, 30, 30) 27%, rgba(255, 255, 255, 0) 100%);
+    z-index: -1;
+}
+
+.slider {
+    margin: 80px 120px;
+    color: white;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    .slider_itens {
+        position: relative;
+        display: flex;
+        gap: 20px;
+        img {
+            position: relative;
+            width: 300px;
+            height: 400px;
+            object-fit: cover;
+            transition: 0.5s;
+            &:hover {
+                width: 350px;
+                height: 450px;
+            }
+        }
+        .container_hover {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            top: 0;
+            bottom: 0;
+            width: 300px;
+            height: 400px;
+            z-index: 99;
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .container_initial {
+       .description h2 {
+            color: white;
+            font-size: 57px;
+            margin: 36px -40px;
+            width: 450px;
+            line-height: 100px;
+        }
+    }
+}
+@keyframes opacityDown {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes animeDown {
+    from {
+        margin-top: 20px;
+    }
+    to {
+        margin-top: 0;
+    }
+}

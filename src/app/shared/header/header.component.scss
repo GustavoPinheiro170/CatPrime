@@ -1,0 +1,47 @@
+@import '../../../sass/base';
+
+.menu {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: $basebackground;
+    padding: 10px;
+    ul {
+        display: flex;
+    }
+    li {
+     display: flex;
+     align-items: center;
+     margin-left: 10px;
+     color: white;
+    }
+    mat-icon {
+        padding: 5px;
+    }
+
+    .menu-li{
+        display: flex;
+    }
+    .login{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 30px;
+        color: white;
+        button {
+            display: flex;
+            align-items: center;
+            border: none;
+            background-color: $title;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: .3s;
+            &:hover {
+                background-color: white;
+                color: $title
+            }
+        }
+    }
+}
