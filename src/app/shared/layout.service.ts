@@ -11,12 +11,13 @@ export class LayoutService {
 
   informations: any;
 
+  urlApi: string = 'https://catprime.herokuapp.com/filmes'
 
   getFilmes(): Observable<Object> {
-    return this.http.get('http://localhost:3000/filmes')
+    return this.http.get(this.urlApi)
   }
   getAnyFilme(event: string): Observable<Object> {
-    return this.http.get(`http://localhost:3000/filmes?id=${event}`)
+    return this.http.get(`${this.urlApi}?id=${event}`)
   }
 
   getInformations(event: any) {
