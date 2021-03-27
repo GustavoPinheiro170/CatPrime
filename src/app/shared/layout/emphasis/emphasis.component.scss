@@ -41,3 +41,17 @@
         }
     }
 }
+
+@media (max-width: 800px) {
+    .emphassis {
+        flex-direction: column;
+        .description {
+            width: 100%;
+            margin-bottom: 40px;
+        }
+        .video_iframe iframe{
+            width: 300px;
+     
+        }
+    }
+}

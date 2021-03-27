@@ -4,6 +4,8 @@
     display: flex;
     position: relative;
     animation: animeDown 1s forwards;
+    max-height: 60%;
+    height: 53%;
     .description {
         width: 60%;
         height: 420px;
@@ -88,6 +90,11 @@
         z-index: -99;
         animation: opacityDown 4s forwards;
         background-image: linear-gradient(to right, rgb(8, 8, 8), rgba(97, 97, 97, 0));
+        .bg-config {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
     }
     img {
         width: 100%;
@@ -99,12 +106,12 @@
 .bg-gradient {
     display: block;
     position: absolute;
-    bottom: -100px;
+    bottom: 0;
     width: 100%;
     height: 300px;
     background: rgb(97, 97, 97);
     background: linear-gradient(0deg, $bodybackground 0%, rgb(31, 30, 30) 27%, rgba(255, 255, 255, 0) 100%);
-    z-index: -1;
+    z-index: 99;
 }
 
 .slider {
@@ -143,12 +150,21 @@
 
 @media (max-width: 800px) {
     .container_initial {
-        .description h2 {
-            color: white;
-            font-size: 57px;
-            margin: 36px -40px;
-            width: 450px;
-            line-height: 100px;
+        max-height: 68%;
+        height: 80%;
+        .description {
+            h2 {
+                color: white;
+                font-size: 50px;
+                margin: 32px 14px;
+                width: 450px;
+                line-height: 100px;
+            }
+            p {
+                max-height: 201px;
+                margin-bottom: 10px;
+                overflow: scroll;
+            }
         }
     }
 }

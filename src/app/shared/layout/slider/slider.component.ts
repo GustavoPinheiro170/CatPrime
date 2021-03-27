@@ -1,4 +1,4 @@
-import { Component, OnInit, Output , EventEmitter} from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { LayoutService } from '../../layout.service';
 
 @Component({
@@ -11,7 +11,7 @@ export class SliderComponent implements OnInit {
 
   @Output() informations = new EventEmitter();
 
-  @Output() video: any;
+  @Output() video: Object= [];
 
   arrayFilmes: any;
   funcionSlider: any;
@@ -45,17 +45,6 @@ export class SliderComponent implements OnInit {
 
 
 
-  hideInfo(event: any) {
-    if (this.showInformation && event.target.nodeName === 'SPAN')
-      event.path[1].querySelector('span').classList.remove('informations')
-    this.showInformation = false
-  }
-
-  showInfo(event: any) {
-    if (!this.showInformation && event.target.nodeName == 'IMG')
-      event.path[1].querySelector('span').classList.add('informations')
-    this.showInformation = true
-  }
 
   Slider(slide: string, wrapper: string) {
     return (

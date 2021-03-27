@@ -29,10 +29,12 @@
         </div>
     </div>
     <div class='image_initial'>
-        <img *ngIf='informations; else image' [src]='informations.imagebanner' />
-        <ng-template #image><img src='../../../assets/catvsgodzilla.jpg' /></ng-template>
+        <div class='bg-config'>
+            <img *ngIf='informations; else image' [src]='informations.imagebanner' />
+            <ng-template #image><img src='../../../assets/catvsgodzilla.jpg' /></ng-template>
+            <span class='bg-gradient'></span>
+        </div>
     </div>
-    <span class='bg-gradient'></span>
 </div>
 
 <app-slider (informations)='receivedArray($event)'></app-slider>
