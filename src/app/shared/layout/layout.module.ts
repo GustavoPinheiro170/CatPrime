@@ -9,6 +9,7 @@ import {AppLayoutRouting} from './layout-routing.module';
   declarations: [
     HomeComponent,
 
+
   ],
   imports: [
     CommonModule,
