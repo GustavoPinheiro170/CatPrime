@@ -1,13 +1,26 @@
 <app-header></app-header>
 <div class='container_initial'>
     <div class='description'>
-        <h2>Godzilla VS OWlKitty</h2>
-        <span class='subtitle'>OwlKitty Parody</span>
-        <p>A parody of Godzilla vs. Kong starring my cat OwlKitty. #OwlKitty​ #Godzilla​ #GodzillaVsKong</p>
+        <h2 *ngIf='informations; else title'>{{informations.title}}</h2>
+        <ng-template #title>
+            <h2>Godzilla VS OWlKitty</h2>
+        </ng-template>
+
+        <p *ngIf='informations; else description'>{{informations.description}}</p>
+        <ng-template #description>
+            <p>A parody of Godzilla vs. Kong starring my cat OwlKitty. #OwlKitty​ #Godzilla​ #GodzillaVsKong</p>
+        </ng-template>
+
         <div class='buttons-preview'>
             <button class='playnow'>
-                <mat-icon>play_arrow</mat-icon>
-                Ver agora
+                <a *ngIf='informations; else link' routerLink='video/{{informations.id}}'>
+                    <mat-icon>play_arrow</mat-icon>
+                    Ver agora
+                </a>
+                <ng-template #link>
+                    <mat-icon>play_arrow</mat-icon>
+                    Ver agora
+                </ng-template>
             </button>
             <button class='favorite'>
                 <mat-icon>library_add</mat-icon>
@@ -15,8 +28,12 @@
             </button>
         </div>
     </div>
-    <div class='image_initial'></div>
+    <div class='image_initial'>
+        <img *ngIf='informations; else image' [src]='informations.imagebanner' />
+        <ng-template #image><img src='../../../assets/catvsgodzilla.jpg' /></ng-template>
+    </div>
     <span class='bg-gradient'></span>
 </div>
 
-<app-slider></app-slider>
+<app-slider (informations)='receivedArray($event)'></app-slider>
+<app-emphasis></app-emphasis>

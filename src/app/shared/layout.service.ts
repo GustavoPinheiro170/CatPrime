@@ -9,6 +9,9 @@ export class LayoutService {
 
   constructor(private http: HttpClient) { }
 
+  informations: any;
+
+
   getFilmes(): Observable<Object> {
     return this.http.get('http://localhost:3000/filmes')
   }
@@ -16,6 +19,8 @@ export class LayoutService {
     return this.http.get(`http://localhost:3000/filmes?id=${event}`)
   }
 
-
+  getInformations(event: any) {
+    this.informations = event
+  }
 
 }

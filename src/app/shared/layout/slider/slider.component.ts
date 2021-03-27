@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output , EventEmitter} from '@angular/core';
 import { LayoutService } from '../../layout.service';
 
 @Component({
@@ -8,6 +8,8 @@ import { LayoutService } from '../../layout.service';
 })
 export class SliderComponent implements OnInit {
 
+
+  @Output() informations = new EventEmitter();
 
   @Output() video: any;
 
@@ -40,6 +42,9 @@ export class SliderComponent implements OnInit {
     this.init();
 
   }
+
+
+
   hideInfo(event: any) {
     if (this.showInformation && event.target.nodeName === 'SPAN')
       event.path[1].querySelector('span').classList.remove('informations')
@@ -63,6 +68,7 @@ export class SliderComponent implements OnInit {
     return element.offsetLeft
   }
   moveSlide(distX: any) {
+    this.transition();
     this.dist.movePosition = distX;
     this.slider.style.transform = `translate3d(${distX}px, 0, 0)`;
     const slideArray = [...this.wrap.children].map((element) => {
@@ -74,13 +80,20 @@ export class SliderComponent implements OnInit {
     })
     const index = slideArray.length - 1;
     if (distX < -slideArray[index].position) {
-      this.move = false;
-      this.dist.finalPosition = 51
-    } else if (distX < slideArray[0].position ) {
-      console.log(distX)
+
+      this.service.getFilmes().subscribe((item: any) => [...this.arrayFilmes.push(...item)])
+
+    } else if (distX > slideArray[0].position) {
+      this.transition();
+      this.dist.movePosition = -slideArray[0].position
+      distX = this.dist.movePosition;
     }
+
   }
 
+  transition() {
+    this.slider.style.transition = 'transform .3s';
+  }
   updatePosition(clientX: any) {
     this.dist.movement = (this.dist.startX - clientX) * 1.6;
     return this.dist.finalPosition - this.dist.movement;
@@ -136,6 +149,13 @@ export class SliderComponent implements OnInit {
     this.bindEvents()
     this.addSlideEvents();
     return this;
+  }
+
+
+  // Recupera dados para banner
+
+  getInfo(event: any) {
+    this.informations.emit(event)
   }
 
 }

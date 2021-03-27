@@ -7,8 +7,8 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthModule } from './modules/auth/auth.module';
-import { HomeComponent } from './modules/home/pages/home/home.component';
 import { HeaderComponent } from './shared/header/header.component';
+import { EmphasisComponent } from './shared/layout/emphasis/emphasis.component';
 import { LayoutComponent } from './shared/layout/layout.component';
 import { LayoutModule } from './shared/layout/layout.module';
 import { SliderComponent } from './shared/layout/slider/slider.component';
@@ -23,6 +23,7 @@ import { VideoComponent } from './shared/layout/video/video.component';
     HeaderComponent,
     SliderComponent,
     VideoComponent,
+    EmphasisComponent
   ],
   imports: [
     BrowserModule,
