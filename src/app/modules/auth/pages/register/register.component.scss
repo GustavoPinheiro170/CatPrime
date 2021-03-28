@@ -92,3 +92,13 @@ form {
         color: slategray;
     }
 }
+
+@media (max-width:800px){
+    .banner-image {
+      display: none !important;
+    }
+    form{
+        width: 100%;
+    }
+    
+}

@@ -30,7 +30,6 @@ export class LayoutComponent implements OnInit {
 
   receivedArray(event: any) {
     this.informations = event;
-    console.log(this.informations)
   }
 
 

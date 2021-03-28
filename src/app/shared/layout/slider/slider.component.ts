@@ -11,7 +11,7 @@ export class SliderComponent implements OnInit {
 
   @Output() informations = new EventEmitter();
 
-  @Output() video: Object= [];
+  @Output() video: Object = [];
 
   arrayFilmes: any;
   funcionSlider: any;
@@ -42,8 +42,6 @@ export class SliderComponent implements OnInit {
     this.init();
 
   }
-
-
 
 
   Slider(slide: string, wrapper: string) {
@@ -143,8 +141,19 @@ export class SliderComponent implements OnInit {
 
   // Recupera dados para banner
 
+
+  opacityAnimation() {
+    const image = document.getElementById('js-animation');
+    if (image) {
+      image.style.animation = 'opacityDown 3s forwards';
+      setTimeout(() => {
+        image.style.animation = 'none';
+      },4000)
+    }
+  }
   getInfo(event: any) {
     this.informations.emit(event)
+    this.opacityAnimation() 
   }
 
 }

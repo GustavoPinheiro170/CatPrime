@@ -68,18 +68,21 @@
     z-index: 99999;
     animation: opacityDown 1s forwards;
     margin-top: 70px;
-    ul,
+    nav, 
+    ul {
+        display: flex;
+        flex-direction: column;
+    }
     li {
-        width: 100%;
         display: flex;
         flex-direction: row;
-        justify-content: center;
         align-items: center;
         padding: 10px 10px 10px;
         color: white;
         text-decoration: none;
         list-style-type: none;
         z-index: 99999;
+        float: right;
 
         li:hover {
             background-color: rgba(161, 160, 160, 0.787);
@@ -98,7 +101,7 @@
         .menu-li nav {
             display: none;
         }
-        .login button {
+        .login img {
             display: none;
         }
     }

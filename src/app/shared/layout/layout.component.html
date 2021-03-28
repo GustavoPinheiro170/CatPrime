@@ -28,7 +28,7 @@
             </button>
         </div>
     </div>
-    <div class='image_initial'>
+    <div class='image_initial' id='js-animation'>
         <div class='bg-config'>
             <img *ngIf='informations; else image' [src]='informations.imagebanner' />
             <ng-template #image><img src='../../../assets/catvsgodzilla.jpg' /></ng-template>

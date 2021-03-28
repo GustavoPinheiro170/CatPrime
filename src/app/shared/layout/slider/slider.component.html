@@ -8,10 +8,14 @@
                     <span class='informations'>
                         <h2>{{item.title}}</h2>
                         <p>{{item.description}}</p>
+                        <div class='buttons_item'>
                         <button routerLink='video/{{item.id}}'>
                             <mat-icon>play_arrow</mat-icon> Assistir
                         </button>
+                           <span>  <mat-icon>pets</mat-icon>Favoritos</span>
+                        </div>
                     </span>
+
                 </li>
             </ul>
         </div>

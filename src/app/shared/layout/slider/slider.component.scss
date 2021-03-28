@@ -26,8 +26,8 @@
         left: 0;
         bottom: 0;
         transition: 0.5s;
-        background-color: rgba(5, 5, 5, 0.281);
-        animation: 1s opacityDown forwards;
+        animation: 1s animeInformations forwards;
+        top: -30px;
         border-radius: 20px;
         box-shadow: 0px 5px 10px rgb(41, 41, 41);
         h2,
@@ -49,6 +49,23 @@
             width: 100px;       
             opacity: 0;
             cursor: pointer;
+        }
+        .buttons_item {
+            display: flex;
+            align-items: center;
+            span {
+                display: flex;
+                align-items: center;
+                background-color: $title;
+                color: white;
+                margin-left: 30px;
+                border: none;
+                border-radius: 10px;
+                padding: 10px;
+                width: 100px;       
+                cursor: pointer;
+                opacity: 0;
+            }
         }
     }
     .slider_itens {
@@ -76,9 +93,16 @@
             &:hover {
                h2,
                p,
-               button {
+               button,
+               span {
                    opacity: 1;
+                   animation: animeInformations 1s forwards;
+             
                }
+            &:hover span{
+                background-color: rgba(5, 5, 5, 0.281);
+            }
+         
             
             }
             img {
@@ -94,7 +118,8 @@
 }
 .opacity {
     h2,
-    p {
+    p,
+     {
         opacity: 0;
     }
 }
@@ -149,7 +174,7 @@
     }
 }
 
-@keyframes animeDown {
+@keyframes animeUp {
     from {
         margin-top: 20px;
     }
