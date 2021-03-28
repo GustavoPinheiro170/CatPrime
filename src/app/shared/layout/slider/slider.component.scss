@@ -65,6 +65,9 @@
                 width: 100px;       
                 cursor: pointer;
                 opacity: 0;
+                mat-icon {
+                    padding-right: 10px;
+                }
             }
         }
     }
