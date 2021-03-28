@@ -1,6 +1,8 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { YouTubePlayerModule } from '@angular/youtube-player';
 
@@ -33,6 +35,7 @@ import { VideoComponent } from './shared/layout/video/video.component';
     MatIconModule,
     HttpClientModule,
     YouTubePlayerModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]

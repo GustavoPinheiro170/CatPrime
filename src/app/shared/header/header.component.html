@@ -13,5 +13,26 @@
             <button routerLink='login'>Login  <mat-icon aria-hidden="false">person</mat-icon>
             </button>
         </section>
+        <section class='sidebar' (click)="showMenu()">
+            <span class='hamburg'>
+                <svg viewBox="0 0 100 80" width="40" height="40">
+                    <rect width="100" height="10" fill="white" ></rect>
+                    <rect y="30" width="80" height="10" fill="white"></rect>
+                    <rect y="60" width="100" height="10" fill="white"></rect>
+                </svg>
+            </span>
+        </section>
     </div>
+    <div class='sidebar-menus' *ngIf='showFiller'>
+        <nav>
+            <ul>
+                <li><mat-icon>local_movies</mat-icon>Filmes</li>
+                <li><mat-icon>live_tv</mat-icon>Séries</li>
+            </ul>
+        </nav>
+    </div>
+
+
+
+
 </header>

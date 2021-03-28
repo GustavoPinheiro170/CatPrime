@@ -1,4 +1,4 @@
-@import '../../../sass/base';
+@import "../../../sass/base";
 
 .menu {
     width: 100%;
@@ -10,19 +10,19 @@
         display: flex;
     }
     li {
-     display: flex;
-     align-items: center;
-     margin-left: 10px;
-     color: white;
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+        color: white;
     }
     mat-icon {
         padding: 5px;
     }
 
-    .menu-li{
+    .menu-li {
         display: flex;
     }
-    .login{
+    .login {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -37,11 +37,72 @@
             padding: 10px;
             border-radius: 5px;
             cursor: pointer;
-            transition: .3s;
+            transition: 0.3s;
             &:hover {
                 background-color: white;
-                color: $title
+                color: $title;
             }
         }
+    }
+
+}
+.sidebar {
+    display: none;
+    position: relative;
+    width: 100%;
+    .hamburg {
+        position: absolute;
+        right: 25px;
+        top: 10px;
+        cursor: pointer;
+    }
+}
+.sidebar-menus {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #383838e0;
+    border-radius: 10px ;
+    z-index: 99999;
+    animation: opacityDown 1s forwards;
+    margin-top: 70px;
+    ul,
+    li {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 10px 10px;
+        color: white;
+        text-decoration: none;
+        list-style-type: none;
+        z-index: 99999;
+
+        li:hover {
+            background-color: rgba(161, 160, 160, 0.787);
+            color: black;
+        }
+    }
+    mat-icon {
+        padding-right: 10px;
+    }
+}
+
+@media (max-width: 800px) {
+    .menu {
+        z-index: 9999;
+        position: fixed;
+        .menu-li nav {
+            display: none;
+        }
+        .login button {
+            display: none;
+        }
+    }
+    .sidebar {
+        display: block;
     }
 }

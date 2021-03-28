@@ -56,7 +56,7 @@ export class SliderComponent implements OnInit {
   positionElement(element: any) {
     return element.offsetLeft
   }
-  moveSlide(distX: any) {
+  moveSlide(distX: number) {
     this.transition();
     this.dist.movePosition = distX;
     this.slider.style.transform = `translate3d(${distX}px, 0, 0)`;

@@ -9,6 +9,16 @@ export class HeaderComponent implements OnInit {
 
   constructor() { }
 
+  showFiller = false;
+
+  showMenu() {
+    if (this.showFiller) {
+      return this.showFiller = false
+    }else {
+      return this.showFiller = true
+    }
+  }
+
   ngOnInit(): void {
   }
 

@@ -149,9 +149,6 @@
 }
 
 @media (max-width: 800px) {
-    .container_initial {
-        max-height: 68%;
-        height: 80%;
         .description {
             h2 {
                 color: white;
@@ -165,9 +162,29 @@
                 margin-bottom: 10px;
                 overflow: scroll;
             }
+       }
+    
+}
+
+@media (max-width:601px) {
+    .container_initial{
+        height: 85%;
+        max-height: 80%;
+        .description {
+            width: 90%;
         }
     }
 }
+
+
+@media (min-width:602px) and (max-width:1050px ){
+    .container_initial{
+        max-height: 100%;
+        height: 100%;
+    }
+}
+
+
 @keyframes opacityDown {
     from {
         opacity: 0;
