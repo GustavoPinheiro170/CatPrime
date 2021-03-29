@@ -32,7 +32,7 @@
         box-shadow: 0px 5px 10px rgb(41, 41, 41);
         h2,
         p {
-            margin: 30px;
+            margin: 14px;
             z-index: -1;
             opacity: 0;
             transition: .3s;
@@ -121,7 +121,7 @@
 }
 .opacity {
     h2,
-    p,
+    p
      {
         opacity: 0;
     }
@@ -131,8 +131,22 @@
     .slider {
         margin: 40px 0px;
         .informations p {
-            height: 193px;
+            height: 110px;
             overflow: scroll;
+        }
+        .buttons_item{
+            flex-direction: column;
+            span {
+                margin-left: 0px !important;
+                width: 79% !important;
+            }
+        }
+        button {
+                margin-left: 0px !important;
+                border-radius: 10px;
+                padding: 10px;
+                width: 88% !important;       
+                cursor: pointer;         
         }
     }
 

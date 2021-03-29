@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/modules/auth/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -7,19 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private login: AuthService) { }
 
   showFiller = false;
 
+  logged: boolean = false;
+  username: string;
+
+
   showMenu() {
     if (this.showFiller) {
-      return this.showFiller = false
+       this.showFiller = false
     }else {
-      return this.showFiller = true
+       this.showFiller = true
     }
+
   }
 
   ngOnInit(): void {
+    if (this.login.userLogin != undefined) {
+      this.logged = true;
+      this.username = this.login.userLogin
+    }
   }
 
 }

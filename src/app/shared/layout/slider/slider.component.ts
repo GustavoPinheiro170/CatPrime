@@ -13,8 +13,9 @@ export class SliderComponent implements OnInit {
 
   @Output() video: Object = [];
 
-  arrayFilmes: any;
-  funcionSlider: any;
+  arrayFilmes: any= [];
+  funcionSlider: void | Object ;
+
   slider: any;
   wrap: any;
   wrapper: string = '';
@@ -37,7 +38,7 @@ export class SliderComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.service.getFilmes().subscribe((item) => this.arrayFilmes = item)
+    this.service.getFilmes().subscribe((item: any) => this.arrayFilmes = item)
     this.funcionSlider = this.Slider('.slider_itens', '.container_hover');
     this.init();
 
@@ -54,6 +55,7 @@ export class SliderComponent implements OnInit {
   positionElement(element: any) {
     return element.offsetLeft
   }
+
   moveSlide(distX: number) {
     this.transition();
     this.dist.movePosition = distX;
@@ -65,17 +67,23 @@ export class SliderComponent implements OnInit {
         position
       }
     })
+
     const index = slideArray.length - 1;
-    if (distX < -slideArray[index].position) {
 
-      this.service.getFilmes().subscribe((item: any) => [...this.arrayFilmes.push(...item)])
-
-    } else if (distX > slideArray[0].position) {
+    if (distX > slideArray[0].position) {
       this.transition();
-      this.dist.movePosition = -slideArray[0].position
+      this.dist.movePosition = slideArray[0].position
       distX = this.dist.movePosition;
+      this.slider.style.transform = `translate3d(${slideArray[0].position}px, 0, 0)`;
+      return false
     }
-
+    else if (distX < slideArray[index].position - 200) {
+      this.service.getFilmes().subscribe((item: any) => {
+        return [this.arrayFilmes.push(...item)]
+        } 
+      )
+    }
+    return true
   }
 
   transition() {
@@ -148,12 +156,12 @@ export class SliderComponent implements OnInit {
       image.style.animation = 'opacityDown 3s forwards';
       setTimeout(() => {
         image.style.animation = 'none';
-      },4000)
+      }, 4000)
     }
   }
   getInfo(event: any) {
     this.informations.emit(event)
-    this.opacityAnimation() 
+    this.opacityAnimation()
   }
 
 }

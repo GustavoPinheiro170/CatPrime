@@ -13,15 +13,14 @@ import { LayoutService } from '../layout.service';
 export class LayoutComponent implements OnInit {
 
 
-
-  informations: any; 
+  informations: any;
 
   titleDefault = 'Godzilla VS OWlKitty'
   Descriptions = 'A parody of Godzilla vs. Kong starring my cat OwlKitty. #OwlKitty​ #Godzilla​ #GodzillaVsKong'
   TitleDescription = 'OwlKitty Parody'
   Image = '../../../assets/catvsgodzilla.jpg'
 
-  constructor(private service: LayoutService) {}
+  constructor(private service: LayoutService) { }
 
 
   ngOnInit(): void {

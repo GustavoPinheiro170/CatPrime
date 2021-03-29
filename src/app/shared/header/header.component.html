@@ -10,8 +10,8 @@
             </nav>
         </section>
         <section class='login'>
-            <a routerLink='login'><img src='../../../assets/homem.svg' width="50px" />
-            </a>
+            <p *ngIf='logged'>{{username}}</p>
+            <a routerLink='login'><img src='../../../assets/homem.svg' width="50px" /></a>
         </section>
         <section class='sidebar' (click)="showMenu()">
             <span class='hamburg'>
@@ -24,6 +24,7 @@
         </section>
     </div>
     <div class='sidebar-menus' *ngIf='showFiller'>
+        <p *ngIf='logged'>{{username}}</p>
         <a routerLink='login'><img src='../../../assets/homem.svg' width="50px" /></a>
         <nav>
             <ul>

@@ -2,24 +2,26 @@
   <div class='banner-image'>
       <img src='../../../../../assets/banner-phone.jpg' />
   </div>
-<form>
+<form (ngSubmit)="submitForm()"> 
   <h2 class='title'>Login</h2>
   <div class='form-field-class'>
     <label for='Usuario'>Usuario</label>
-    <input class='input-class' type='text' id='Usuario' required />
+    <input class='input-class' type='text' id='Usuario' [(ngModel)]='user' name='user' required />
     <span class='underline'></span>
   </div>
 
   <div class='form-field-class'>
     <label for='senha'>Senha</label>
-    <input class='input-class' type='password'>
+    <input class='input-class' type='password' [(ngModel)]='pass' name='pass' required>
     <span class='underline'></span>
   </div>
-
+  <span *ngIf='error'>Usuário ou senha inválidos</span>
+  
   <div class='buttons-login'>
     <button mat-flat-button class='entrar'>Entrar</button>
     <button mat-flat-button routerLink='/register' class='register'>Cadastrar-se</button>
   </div>
+ 
 
   <div class='social-medias'>
     <a href='#'><img src='../../../../../assets/facebook.svg' /></a>

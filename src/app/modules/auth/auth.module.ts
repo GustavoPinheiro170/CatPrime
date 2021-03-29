@@ -10,6 +10,7 @@ import { MatIconModule } from '@angular/material/icon'
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {AppLoginRouting} from './login-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import {AppLoginRouting} from './login-routing.module';
     MatButtonModule,
     MatIconModule,
     MatFormFieldModule,
-    AppLoginRouting
+    AppLoginRouting,
+    HttpClientModule
 
   ]
 })

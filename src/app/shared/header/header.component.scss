@@ -28,6 +28,10 @@
         align-items: center;
         margin-right: 30px;
         color: white;
+        p {
+            margin-right: 16px;
+            text-transform: uppercase;
+        }
         button {
             display: flex;
             align-items: center;
@@ -44,7 +48,6 @@
             }
         }
     }
-
 }
 .sidebar {
     display: none;
@@ -64,11 +67,16 @@
     align-items: center;
     justify-content: center;
     background-color: #383838e0;
-    border-radius: 10px ;
+    border-radius: 10px;
     z-index: 99999;
     animation: opacityDown 1s forwards;
     margin-top: 70px;
-    nav, 
+    p {
+        margin-right: 16px;
+        text-transform: uppercase;
+        color: white;
+    }
+    nav,
     ul {
         display: flex;
         flex-direction: column;
@@ -101,11 +109,14 @@
         .menu-li nav {
             display: none;
         }
-        .login img {
+        .login img,
+        a,
+        p {
             display: none;
         }
     }
     .sidebar {
         display: block;
     }
+
 }

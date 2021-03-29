@@ -34,5 +34,16 @@
         }
 
 
+    ],
+    
+    "usuarios": [
+        {
+            "id": 1,
+            "login": "gustavop",
+            "senha": "08121520"
+        }
     ]
+
+
 }
+
