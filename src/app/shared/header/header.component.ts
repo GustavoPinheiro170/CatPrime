@@ -16,6 +16,16 @@ export class HeaderComponent implements OnInit {
   username: string;
 
 
+
+
+  ngOnInit(): void {
+    if (this.login.userLogin != undefined) {
+      this.logged = true;
+      this.username = this.login.userLogin
+    }
+  
+  }
+
   showMenu() {
     if (this.showFiller) {
        this.showFiller = false
@@ -25,11 +35,6 @@ export class HeaderComponent implements OnInit {
 
   }
 
-  ngOnInit(): void {
-    if (this.login.userLogin != undefined) {
-      this.logged = true;
-      this.username = this.login.userLogin
-    }
-  }
+
 
 }

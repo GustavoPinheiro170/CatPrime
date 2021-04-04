@@ -13,7 +13,7 @@ export class SliderComponent implements OnInit {
 
   @Output() video: Object = [];
 
-  arrayFilmes: any= [];
+  arrayFilmes: any = [];
   funcionSlider: void | Object ;
 
   slider: any;
@@ -67,17 +67,16 @@ export class SliderComponent implements OnInit {
         position
       }
     })
-
+    
     const index = slideArray.length - 1;
 
     if (distX > slideArray[0].position) {
-      this.transition();
       this.dist.movePosition = slideArray[0].position
       distX = this.dist.movePosition;
       this.slider.style.transform = `translate3d(${slideArray[0].position}px, 0, 0)`;
       return false
     }
-    else if (distX < slideArray[index].position - 200) {
+    else if (distX < slideArray[index].position - 50) {
       this.service.getFilmes().subscribe((item: any) => {
         return [this.arrayFilmes.push(...item)]
         } 
@@ -108,7 +107,8 @@ export class SliderComponent implements OnInit {
   }
 
   onMove(event: any) {
-    const pointerPosition = (event.type === 'mousemove') ? event.clientX : event.changedTouches[0]
+    const pointerPosition = (event.type === 'mousemove')
+     ? event.clientX : event.changedTouches[0]
     if (this.move) {
       const finalPosition = this.updatePosition(pointerPosition)
       this.moveSlide(finalPosition);

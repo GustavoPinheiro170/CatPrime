@@ -15,6 +15,8 @@ import { LayoutComponent } from './shared/layout/layout.component';
 import { LayoutModule } from './shared/layout/layout.module';
 import { SliderComponent } from './shared/layout/slider/slider.component';
 import { VideoComponent } from './shared/layout/video/video.component';
+import { SearchComponent } from './shared/header/search/search/search.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -25,10 +27,12 @@ import { VideoComponent } from './shared/layout/video/video.component';
     HeaderComponent,
     SliderComponent,
     VideoComponent,
-    EmphasisComponent
+    EmphasisComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     AuthModule,
     LayoutModule,
